@@ -1,0 +1,16 @@
+ public void three(View V){
+
+        Intent share = new Intent(android.content.Intent.ACTION_SEND);
+
+        share.setType("text/plain");
+
+        share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+
+        share.putExtra(Intent.EXTRA_SUBJECT, "hi this my app");
+
+        share.putExtra(Intent.EXTRA_TEXT, "http://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName());
+
+        startActivity(Intent.createChooser(share, "Share to Friends!"));
+
+
+    }
